@@ -1,21 +1,35 @@
 import { openDB } from 'idb';
 
 const initdb = async () =>
-  openDB('jate', 1, {
+  openDB('txed', 1, {
     upgrade(db) {
-      if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
+      if (db.objectStoreNames.contains('txed')) {
+        console.log('txed database already exists');
         return;
       }
-      db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
+      db.createObjectStore('txed', { keyPath: 'id', autoIncrement: true });
+      console.log('txed database created');
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented');
+// POST Logic
+export const putDb = async (content) => {
+  const bateDb = await openDB('texed', 1);
+  const tx = bateDb.transaction('txed', 'readwrite');
+  const store = tx.objectStore('txed');
+  const request = store.put({ txed: content });
+  const result = await request;
+  console.log('Data saved to the txedDb', result);
+};
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+// GET Logic
+export const getDb = async () => {
+  const bateDb = await openDB('txed', 1);
+  const tx = bateDb.transaction('txed', 'readwrite');
+  const store = tx.objectStore('txed');
+  const request = store.getAll();
+  const result = await request;
+  console.log('Data read from the txedDb', result);
+};
 
 initdb();

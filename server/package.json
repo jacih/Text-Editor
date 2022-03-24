@@ -1,5 +1,5 @@
 {
-    "name": "JATE",
+    "name": "text-editor",
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
@@ -7,8 +7,8 @@
         "server": "nodemon server.js --ignore client"
     },
     "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "author": "jacih",
+    "license": "Apache 2.0",
     "dependencies": {
         "express": "^4.17.1"
     },
