@@ -26,10 +26,10 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
-      new WebpackPwaManifest({
-        // 
-        name: 'Text Editor',
-
+      new WebpackPwaManifest({ 
+        fingerprints: false,
+        inject: true,
+        name: 'A Simple Text Editor',
         description: 'Text-Editor Progressive Web App',
         short_name: 'txed',
         orientation: "portrait",
