@@ -17,6 +17,9 @@
 The Text Editor application is a simple PWA single-page application that runs in your browser and can be installed and run offline. The app automatically saves content inside the text editor when the DOM window is unfocused. The refactor added functionality for getting and storing data in the IndexedDB database. A service-worker was added to cache static assets with workbox and a bundled webpack application. 
 
 ## [Mock-Up](#table-of-contents)
+![TXED_Landing_page](https://user-images.githubusercontent.com/97176042/160224531-290d419e-5eca-476e-aabb-16217410a7f4.png)
+![TXED_Service_Worker_Online](https://user-images.githubusercontent.com/97176042/160224532-2464eeb4-ab12-4e76-b3e8-f0c9633a6828.png)
+
 
 ## [Installation](#table-of-contents)
 npm i, npm run build, npm start for repository files. On click of install button on the staging link, the app is installed locally and runs offline without any additional action
