@@ -8,7 +8,7 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js',
+      install: './src/js/install.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -17,30 +17,27 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'txed'
+        title: 'txed',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
-      new WebpackPwaManifest({ 
+      new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'A Simple Text Editor',
-        description: 'Text-Editor Progressive Web App',
-        short_name: 'txed',
-        orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
-        start_url: '/',
-        publicPath: '/',
-        fingerprints: false,
-        inject: true,
+        name: "Text Editor",
+        short_name: "txed",
+        description: "A simple PWA Text Editor with offline capabilities",
+        background_color: "#ffffff",
+        theme_color: "#ffffff",
+        start_url: "/",
+        publicPath: "/",
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve("src/images/logo.png"),
             sizes: [48, 96],
-            destination: path.join('assets', 'icons'),
+            destination: path.join("assets", "icons"),
           },
         ],
       }),
@@ -49,7 +46,7 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
         {
@@ -58,14 +55,14 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /node_modules/,
+          exclude: /(node_modules)/,
           use: {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
               plugins: [
-                '@babel/plugin-proposal-object-rest-spread',
-                '@babel/transform-runtime'
+                "@babel/plugin-proposal-object-rest-spread",
+                "@babel/transform-runtime",
               ],
             },
           },

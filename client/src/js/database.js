@@ -13,10 +13,10 @@ const initdb = async () =>
   });
 
 // POST Logic
-export const postDb = async (content) => {
+export const putDb = async (content) => {
   console.log('Post one to the database');
-  const bateDb = await openDB('texed-db', 1);
-  const tx = bateDb.transaction('txedDB', 'readwrite');
+  const txedDb = await openDB('txedDB', 1);
+  const tx = txedDb.transaction('txedDB', 'readwrite');
   const store = tx.objectStore('txedDB');
   const request = store.add({ txedDB: content });
   const result = await request;
@@ -24,15 +24,14 @@ export const postDb = async (content) => {
 };
 
 // GET Logic
-export const getAllDb = async () => {
+export const getDb = async () => {
   console.log('GET all from the database');
-  const bateDb = await openDB('txed', 1);
-  const tx = bateDb.transaction('txed', 'readwrite');
-  const store = tx.objectStore('txed');
+  const txedDb = await openDB('txedDB', 1);
+  const tx = txedDb.transaction('txedDB', 'readwrite');
+  const store = tx.objectStore('txedDB');
   const request = store.getAll();
   const result = await request;
   console.log('result.value', result);
-  return result;
 };
 
 initdb();
