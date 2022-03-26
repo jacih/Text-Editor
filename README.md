@@ -34,6 +34,10 @@ This application is not currently accepting contribution.
 ## [Tests](#table-of-contents)
 There are no test suites for this application.
 
+## [Links](#table-of-contents)
+- [Heroku Staging Link](https://evening-citadel-64727.herokuapp.com/);
+- [GitHub Repository](https://github.com/jacih/Text-Editor.git);
+
 ## [Questions](#table-of-contents)
 Contact me through [GitHub](https://github.com/jacih)
 Contact me through email at: [jacqueline.e.hodgson@gmail.com](mailto:jacqueline.e.hodgson@gmail.com)
